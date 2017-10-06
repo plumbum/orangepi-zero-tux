@@ -27,3 +27,15 @@ module tux_back_screwed() {
         }
     }
 }
+
+module tux_back_fill_screwed() {
+    hole_mount_deep = 20;
+    // Screw mount
+    difference() {
+        tux_back_fill();
+        // Cut screw holes
+        for (coord = screw_place) {
+            translate(coord) screw_hole();
+        }
+    }
+}
