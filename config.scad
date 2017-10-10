@@ -1,6 +1,6 @@
 thickness = 1.6;
 
-enable_opi0_panel = 0;
+enable_opi0_holder = 1;
 enable_connector_panel = 0;
 
 // Screw coordinates
@@ -13,7 +13,7 @@ screw_place = [
 ];
 
 // Connetor back panel
-connector_panel_x_offset = 8;
+connector_panel_x_offset = 7;
 connector_panel_z_offset = 12;
 connector_panel_l = 20;
 connector_panel_w = 36;
@@ -22,7 +22,7 @@ connector_panel_h = 16;
 // Orange pi zero holder
 pcb_l = 48 + 1;
 pcb_w = 45 + 2;
-pcb_h = 15 + 3.5;
+pcb_h = 19; // 70; // 15 + 3.5;
 pcb_thickness = 2;
 pcb_screw_place = 5;
 pcb_bottom_space = 2;

@@ -1,5 +1,6 @@
 include <config.scad>
 use <common.scad>
+use <opi0-holder.scad>
 
 tux_back_screwed();
 
@@ -12,7 +13,14 @@ module tux_back_screwed() {
             tux_back();
             intersection() {
                 union() {
-                    if (enable_connector_panel || enable_opi0_panel) connector_panel();
+                    if (enable_connector_panel) connector_panel();
+                    if (enable_opi0_holder) {
+                        translate([-connector_panel_x_offset, 0, connector_panel_z_offset]) {
+                            opi0_holder();
+                            translate([-thickness-10, -(pcb_w+thickness*2)/2, -(thickness+pcb_bottom_space)])
+                                cube([10, pcb_w+thickness*2, pcb_h+thickness*2]);
+                        }
+                    }
                     // Place screw mounts
                     translate([-hole_mount_deep, 0, 0]) {
                         union() {
@@ -29,7 +37,10 @@ module tux_back_screwed() {
         for (coord = screw_place) {
             translate(coord) screw_hole();
         }
-        if (enable_connector_panel || enable_opi0_panel) connector_panel_cutter();
+        if (enable_connector_panel) connector_panel_cutter();
+        if (enable_opi0_holder)
+            translate([-connector_panel_x_offset, 0, connector_panel_z_offset])
+                opi0_pcb();
     }
 }
 
