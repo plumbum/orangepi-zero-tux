@@ -12,7 +12,7 @@ module tux_back_screwed() {
             tux_back();
             intersection() {
                 union() {
-                    connector_panel();
+                    if (enable_connector_panel || enable_opi0_panel) connector_panel();
                     // Place screw mounts
                     translate([-hole_mount_deep, 0, 0]) {
                         union() {
@@ -29,7 +29,7 @@ module tux_back_screwed() {
         for (coord = screw_place) {
             translate(coord) screw_hole();
         }
-        connector_panel_cutter();
+        if (enable_connector_panel || enable_opi0_panel) connector_panel_cutter();
     }
 }
 
