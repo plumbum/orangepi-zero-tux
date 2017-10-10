@@ -1,12 +1,4 @@
-
-// Screw coordinates
-screw_place = [
-    [0, -22, 5],
-    [0, 22, 5],
-    [0, -20, 64],
-    [0, 20, 64],
-    [0, 0, 110]
-];
+include <config.scad>
 
 module tux_front() {
     difference() {
