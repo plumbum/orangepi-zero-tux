@@ -27,24 +27,24 @@ pcb_thickness = 2;
 pcb_screw_place = 5;
 pcb_bottom_space = 2;
 
-usb_width = 6.5;
+usb_width = 7;
 usb_height = 14;
-usb_offset = 7;
-usb_floor_offset = pcb_thickness;
+usb_offset = 6.5;
+usb_floor_offset = pcb_thickness+0.0;
 
-eth_width = 16.5;
+eth_width = 17;
 eth_height = 14.5;
-eth_offset = pcb_w-eth_width-15;
-eth_floor_offset = pcb_thickness;
+eth_offset = 15.5;
+eth_floor_offset = pcb_thickness-1;
 
 musb_width = 8.5;
 musb_height = 3.5;
-musb_offset = pcb_w-musb_width-32;
-musb_floor_offset = pcb_thickness;
+musb_offset = 5.5;
+musb_floor_offset = pcb_thickness-0.5;
 
 msd_width = 12;
-msd_height = 2;
-msd_offset = 12;
+msd_height = 2.5;
+msd_offset = 22;
 msd_floor_offset = -msd_height;
 
 holder_size = 6.1;

@@ -64,7 +64,7 @@ module opi0_pcb() {
         cube([pcb_l, pcb_w, pcb_thickness]);
         // Inner space
         translate([0, pcb_screw_place+1, -pcb_thickness-pcb_bottom_space])
-            cube([pcb_l, pcb_w-(pcb_screw_place+1)*2, eth_height+pcb_thickness+pcb_bottom_space]);
+            cube([pcb_l, pcb_w-(pcb_screw_place+1)*2, usb_height+pcb_thickness+thickness+pcb_bottom_space]);
         // Usb host
         translate([-10, usb_offset, usb_floor_offset])
             cube([20, usb_width, usb_height]);
